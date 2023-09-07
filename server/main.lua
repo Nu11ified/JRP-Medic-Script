@@ -85,3 +85,15 @@ RegisterCommand("emslogin", function(source, args, rawCommand)
         TriggerClientEvent("chatMessage", player, "^1Error: ^7You don't have permission to log in as EMS.")
     end
 end, false)
+
+RegisterCommand("emslogout", function (source, args, rawcommand)
+    local player = source
+
+    if IsPlayerAceAllowed(player, "reviveems") then
+        -- Set session variable to mark player as EMS
+        TriggerClientEvent("ems:login", player, false)
+        TriggerClientEvent("chatMessage", player, "^2Success: ^7You have logged out as EMS.")
+    else
+        TriggerClientEvent("chatMessage", player, "^1Error: ^7You don't have permission to log out as EMS.")
+    end 
+end, false)

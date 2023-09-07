@@ -8,8 +8,8 @@ local bleedOutTime = 0
 local cprInProgress = false
 
 RegisterNetEvent("ems:login")
-AddEventHandler("ems:login", function()
-    IsEMS = true
+AddEventHandler("ems:login", function(isEms)
+    IsEMS = isEms
 end)
 
 -- Main Loop --
